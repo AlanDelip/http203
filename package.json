@@ -1,0 +1,9 @@
+{
+  "name": "http203",
+  "version": "1.0.0",
+  "description": "there are some implementations of Google HTTP203.",
+  "scripts": {
+  },
+  "author": "Alan. Zhufeng Xu",
+  "license": "MIT"
+}
