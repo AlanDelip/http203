@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>Display: Contents;</title>
+    <meta name="author" content="Zhufeng Xu (Alan)"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="google" content="index,follow"/>
+    <meta name="googlebot" content="index,follow"/>
+    <meta name="verify" content="index,follow"/>
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+    <link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/alansite/resources/favicon.ico" type="image/x-icon"/>
+    <style type="text/less">
+        @import "../common/index";
+
+        .banner {
+            background: url('https://images.unsplash.com/photo-1531449862596-16e4c62e2b10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80') fixed center;
+            background-size: cover;
+            max-width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(4, 18vw);
+            grid-template-rows: repeat(4, 18vw);
+            grid-gap: 2vw;
+        }
+
+        .words {
+            display: contents;
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 3em;
+            }
+        }
+
+        .blocks {
+            display: contents;
+
+            div {
+                display: flex;
+                box-sizing: border-box;
+                width: 18vw;
+                height: 18vw;
+                padding: 1em;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.3em;
+                background: rgba(255, 255, 255, 0.8);
+                transition: all .25s ease-in-out;
+
+                &:hover {
+                    background: rgba(255, 165, 0, 0.8);
+                    transform: scale(1.1);
+                    color: white;
+                    z-index: 1;
+                }
+            }
+        }
+
+        .content {
+            background: white;
+            margin: 0;
+            padding: 4em 20vw;
+            color: #444;
+
+            .title {
+                font-size: 3em;
+                border-top: #444 4px solid;
+            }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section class="banner">
+        <div class="words">
+            <div style="grid-column: 1; grid-row: 2">2019 Has Come.</div>
+            <div style="grid-column: 4 / span 2; grid-row: 1">What Do You Plan To Do?</div>
+        </div>
+        <div class="blocks">
+            <div>I plan to have a sip of falling in love.</div>
+            <div style="grid-column: 2; grid-row: 2">Nothing but PARTY-ing!!</div>
+            <div style="grid-column: 4; grid-row: 2">I'd rather stay at home.</div>
+            <div style="grid-column: 2; grid-row: 3">Hanging around New York?</div>
+            <div style="grid-column: 5; grid-row: 3">Need to find a job.</div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="title">display: contents;</div>
+        <div class="label bg-orange">CSS</div>
+        <div class="mt-m">
+            <div>
+                "Containing element pretends it's not there, in terms of layout"
+            </div>
+            <p class="ciu_embed" data-feature="css-display-contents" data-periods="future_1,current,past_1,past_2"
+               data-accessible-colours="false">
+                <a href="http://caniuse.com/#feat=css-display-contents">Can I Use css-display-contents?</a> Data on
+                support for the css-display-contents feature across the major browsers from caniuse.com.
+            </p>
+        </div>
+    </section>
+</main>
+<footer>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js"></script>
+</body>
+</html>

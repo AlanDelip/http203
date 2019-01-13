@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "description": "there are some implementations of Google HTTP203.",
   "scripts": {
+    "start": "parcel start index.html",
+    "build": "parcel build index.html --public-url ./ -d build/http203"
   },
   "author": "Alan. Zhufeng Xu",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "cssnano": "^4.1.8",
+    "less": "^3.9.0"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
 }
