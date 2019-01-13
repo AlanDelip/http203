@@ -8,7 +8,7 @@ Inspired by & Thanks to:
 - [HTTP203 Youtube Channel](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAKIQFsNbV0JDws_G_bnNo9)
 - [Google HTTP203 Podcast](https://developers.google.com/web/shows/http203/podcast/)
 
-:smirk: Hey! You've just found an informal repository, implementing Non-Authoritative Information(http status code 203) and top-notch techs about Javascript and Frontend issues from Google fellows.
+:smirk: Hey! You've just found an unofficial repository, implementing Non-Authoritative Information(http status code 203) and top-notch techs about Javascript and Frontend issues from Google fellows.
 
 ## Feature List
 *sort by newest first*
