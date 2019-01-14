@@ -19,10 +19,36 @@
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Open+Sans|Staatliches" rel="stylesheet">
     <style type="text/less">
         @import "/common/index";
+
+        .scroll-container {
+            display: flex;
+            scroll-snap-type: x mandatory;
+            overflow-x: scroll;
+            padding: 1em 0;
+
+            img {
+                scroll-snap-align: center;
+                width: 600px;
+                height: 400px;
+                object-fit: cover;
+                display: inline-block;
+                box-shadow: 2px 4px 5px rgba(0, 0, 0, .1);
+                margin-right: 1em;
+            }
+        }
+
+        .code-wrapper {
+            background: #ebebeb;
+            padding: .5em 2em;
+
+            pre {
+                font-family: Consolas, serif;
+            }
+        }
     </style>
 </head>
 <body>
-<header class="dark">
+<header class="dark fixed">
     <a href="https://alan-zhufengxu.com" target="_blank">
         <img alt="logo" src="/assets/alan_xu_logo.png"/>
         <div class="ml-s">Alan's Site</div>
@@ -31,20 +57,22 @@
 <main>
     <section class="content">
         <div class="title-wrapper flex-wrp item-center content-between">
-            <div class="title">Feature</div>
-            <div class="label bg-orange">Tag</div>
+            <div class="title">Scroll Snap</div>
+            <div class="label bg-orange">CSS</div>
         </div>
         <div class="desc">
             <div class="title">
                 HTTP203 Description
             </div>
             <div class="simple-desc">
+                <div><i>It's a high-level feature.</i></div>
                 <div>
                     <i>
-                        Quote
+                        (For a center alignment,)The element is always sort of appearing in the middle, even if I try to
+                        make it not to do that.
                     </i>
                 </div>
-                <div class="referencer">-- By Referencer</div>
+                <div class="referencer">-- By Jake</div>
             </div>
         </div>
         <div class="desc">
@@ -52,6 +80,24 @@
                 Implementation Description
             </div>
             <div class="implementation">
+                <div class="scroll-container">
+                    <img src="https://images.unsplash.com/photo-1502323777036-f29e3972d82f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"/>
+                    <img src="https://images.unsplash.com/photo-1547381496-57b53693e8e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"/>
+                    <img src="https://images.unsplash.com/photo-1547357812-b5afb3656fc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"/>
+                    <img src="https://images.unsplash.com/photo-1547375182-16cf621d398a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"/>
+                </div>
+                <div class="code-wrapper">
+                    <pre>
+.scroll-container {
+   scroll-snap-type: x mandatory;
+   overflow-x: scroll;
+   display: flex;
+}
+
+.scroll-container img {
+   scroll-snap-align: center;
+}</pre>
+                </div>
             </div>
         </div>
         <div class="desc">
@@ -60,18 +106,19 @@
             </div>
             <div class="official-desc">
                 <div>
-                    Official Desc
+                    CSS Scroll Snap is a module of CSS that introduces scroll snap positions, which enforce the scroll
+                    positions that a scroll container’s scrollport may end at after a scrolling operation has completed.
                 </div>
                 <div class="referencer">
                     <span>-- By</span>
-                    <a href="" target="_blank">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scroll_Snap" target="_blank">
                         MDN Official Doc
                     </a>
                 </div>
                 <div class="referencer">
                     <span>@See also</span>
-                    <a href="" target="_blank">
-                        Other Articles
+                    <a href="https://css-tricks.com/practical-css-scroll-snapping/" target="_blank">
+                        CSS-Tricks Articles
                     </a>
                 </div>
             </div>
@@ -80,6 +127,11 @@
             <div class="title">
                 Can I Use?
             </div>
+            <p class="ciu_embed" data-feature="css-snappoints" data-periods="future_1,current,past_1,past_2"
+               data-accessible-colours="false">
+                <a href="http://caniuse.com/#feat=css-snappoints">Can I Use css-snappoints?</a> Data on support for the
+                css-snappoints feature across the major browsers from caniuse.com.
+            </p>
         </div>
     </section>
     <section class="navigator">
@@ -137,5 +189,6 @@
         <div>©2019, Alan'site. All Rights Reserved</div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/gh/ireade/caniuse-embed/caniuse-embed.min.js"></script>
 </body>
 </html>
