@@ -12,86 +12,86 @@
     <meta name="verify" content="index,follow"/>
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Open+Sans|Staatliches" rel="stylesheet">
     <link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/alansite/resources/favicon.ico" type="image/x-icon"/>
-</head>
-<style type="text/less">
-    @import "common/index";
+    <style type="text/less">
+        @import "common/index";
 
-    main {
-        padding: 6em 20vw;
+        main {
+            padding: 6em 20vw;
 
-        .title {
-            font-family: 'Staatliches', cursive;
-            font-size: 3em;
-        }
-
-        .menu {
-            font-size: 1.1em;
-            line-height: 1.5em;
-
-            a {
-                text-decoration: none;
+            .title {
+                font-family: 'Staatliches', cursive;
+                font-size: 3em;
             }
 
-            li {
-                position: relative;
-            }
+            .menu {
+                font-size: 1.1em;
+                line-height: 1.5em;
 
-            .sub-menu {
-                li:last-child {
-                    padding-bottom: .75em;
+                a {
+                    text-decoration: none;
+                }
+
+                li {
+                    position: relative;
+                }
+
+                .sub-menu {
+                    li:last-child {
+                        padding-bottom: .75em;
+                    }
+                }
+
+                .subtitle {
+                    font-weight: bold;
                 }
             }
 
-            .subtitle {
+            .timeline {
+                position: absolute;
+                top: 0;
+                left: -11em;
+                height: 100%;
+                border-left: 3px solid #444444;
+            }
+
+            .timeline-continue {
+                position: absolute !important;
+                list-style-type: none;
+                top: 100%;
+                left: -8.73em;
+                height: 5em;
+                border-left: 3px dashed #444444;
+            }
+
+            .timeline-item {
+                position: absolute;
+                top: 0;
+                left: -5em;
+                font-size: .85em;
                 font-weight: bold;
+                transform: translateX(-100%);
+            }
+
+            .root {
+                position: absolute;
+                top: 0;
+                left: -11em;
+                width: 14px;
+                height: 3px;
+                border-top: 3px solid #444444;
+            }
+
+            .leaf {
+                position: absolute;
+                top: 0;
+                left: -13.2em;
+                width: 7px;
+                height: 1px;
+                border-top: 1px solid #888888;
             }
         }
-
-        .timeline {
-            position: absolute;
-            top: 0;
-            left: -11em;
-            height: 100%;
-            border-left: 3px solid #444444;
-        }
-
-        .timeline-continue {
-            position: absolute !important;
-            list-style-type: none;
-            top: 100%;
-            left: -8.73em;
-            height: 5em;
-            border-left: 3px dashed #444444;
-        }
-
-        .timeline-item {
-            position: absolute;
-            top: 0;
-            left: -5em;
-            font-size: .85em;
-            font-weight: bold;
-            transform: translateX(-100%);
-        }
-
-        .root {
-            position: absolute;
-            top: 0;
-            left: -11em;
-            width: 14px;
-            height: 3px;
-            border-top: 3px solid #444444;
-        }
-
-        .leaf {
-            position: absolute;
-            top: 0;
-            left: -13.2em;
-            width: 7px;
-            height: 1px;
-            border-top: 1px solid #888888;
-        }
-    }
-</style>
+    </style>
+</head>
 <body>
 <header class="dark fixed">
     <a href="https://alan-zhufengxu.com" target="_blank">
