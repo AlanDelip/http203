@@ -1,8 +1,8 @@
 # HTTP203 <img style="float:right;width:100px;padding-top:35px" src="https://img.shields.io/npm/l/vux.svg?style=flat-square" alt="">
 
-[Project Demo Site](https://project.alan-zhufengxu.com/http203)
+![HTTP203](https://i.ytimg.com/vi/PgESLlNCv94/mqdefault.jpg "HTTP203")
 
-![](https://i.ytimg.com/vi/PgESLlNCv94/mqdefault.jpg)
+[Project Demo Website](https://project.alan-zhufengxu.com/http203)
 
 Inspired by & Thanks to:
 - [HTTP203 Youtube Channel](https://www.youtube.com/playlist?list=PLNYkxOF6rcIAKIQFsNbV0JDws_G_bnNo9)
@@ -15,4 +15,27 @@ Inspired by & Thanks to:
 - Best web features of 2018
     - [display: contents;](https://project.alan-zhufengxu.com/http203/best-web-features-2018/display-contents.html)
     - ReportingObserver
+    - Scroll Snap
+    - Named Worker
+    - Conic Gradient
+    - Async Clipboard API
+    - CSS Typed OM
+    - updateViaCache
+    - Bitmaprendererer
+    - Web Locks
+    - CSS Paint API
+    - toggleAttribute
+    - OffscreenCanvas
+    - Focus PreventScroll
+    - Sensors
+    - BigInt
+    - Page Lifecycle API
+    - trimStart/End
+    - import.meta
+    - RegEx Named Capture Groups
+    - Intl.RelativeTimeFormat
+    - ResizeObserver
+    - Audio Worklet
+    - Fetch Cache Mode
+    - Class Fields
     

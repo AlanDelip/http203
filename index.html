@@ -10,42 +10,161 @@
     <meta name="google" content="index,follow"/>
     <meta name="googlebot" content="index,follow"/>
     <meta name="verify" content="index,follow"/>
-    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Open+Sans|Staatliches" rel="stylesheet">
     <link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/alansite/resources/favicon.ico" type="image/x-icon"/>
     <style type="text/less">
         @import "common/index";
 
-        body {
-            padding: 4em 25vw;
-            color: #444444;
-        }
+        main {
+            padding: 6em 20vw;
 
-        .title {
-            font-size: 3em;
-        }
+            .title {
+                font-family: 'Staatliches', cursive;
+                font-size: 3em;
+            }
 
-        .menu {
-            font-size: 1.3em;
-            line-height: 1.5em;
+            .menu {
+                font-size: 1.1em;
+                line-height: 1.5em;
+
+                a {
+                    text-decoration: none;
+                }
+            }
         }
     </style>
 </head>
 <body>
-<div class="title">HTTP203</div>
-<ul class="menu">
-    <li>
-        Best Web Features in 2018
-        <ul>
-            <li>
-                <a href="best-web-features-2018/display-contents.html">
-                    display: contents;
-                </a>
-            </li>
-            <li>
-                <a>Reporting Observer</a>
-            </li>
-        </ul>
-    </li>
-</ul>
+<header class="dark fixed">
+    <a href="https://alan-zhufengxu.com" target="_blank">
+        <img alt="logo" src="/assets/alan_xu_logo.png"/>
+        <div class="ml-s">Alan's Site</div>
+    </a>
+</header>
+<main>
+    <div class="title">HTTP203</div>
+    <ul class="menu">
+        <li>
+            Best Web Features in 2018
+            <ul>
+                <li>
+                    <a href="best-web-features-2018/display-contents.html">
+                        display: contents;
+                    </a>
+                </li>
+                <li>
+                    <a>ReportingObserver</a>
+                </li>
+                <li>
+                    <a>Scroll Snap</a>
+                </li>
+                <li>
+                    <a>Named Worker</a>
+                </li>
+                <li>
+                    <a>Conic Gradient</a>
+                </li>
+                <li>
+                    <a>Async Clipboard API</a>
+                </li>
+                <li>
+                    <a>CSS Typed OM</a>
+                </li>
+                <li>
+                    <a>updateViaCache</a>
+                </li>
+                <li>
+                    <a>Bitmaprendererer</a>
+                </li>
+                <li>
+                    <a>Web Locks</a>
+                </li>
+                <li>
+                    <a>CSS Paint API</a>
+                </li>
+                <li>
+                    <a>toggleAttribute</a>
+                </li>
+                <li>
+                    <a>OffscreenCanvas</a>
+                </li>
+                <li>
+                    <a>Focus PreventScroll</a>
+                </li>
+                <li>
+                    <a>Sensors</a>
+                </li>
+                <li>
+                    <a>BigInt</a>
+                </li>
+                <li>
+                    <a>Page Lifecycle API</a>
+                </li>
+                <li>
+                    <a>trimStart/End</a>
+                </li>
+                <li>
+                    <a>import.meta</a>
+                </li>
+                <li>
+                    <a>RegEx Named Capture Groups</a>
+                </li>
+                <li>
+                    <a>Intl.RelativeTimeFormat</a>
+                </li>
+                <li>
+                    <a>ResizeObserver</a>
+                </li>
+                <li>
+                    <a>Audio Worklet</a>
+                </li>
+                <li>
+                    <a>Fetch Cache Mode</a>
+                </li>
+                <li>
+                    <a>Class Fields</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</main>
+<footer>
+    <div>
+        <div class="social-media-container">
+            <a href="https://www.linkedin.com/in/alan-zhufeng-xu/" target="_blank"
+               class="flex-wrp items-center ">
+                <img alt="linkedin-icon"
+                     src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8Zz4KCQk8cmVjdCB5PSIxNjAiIHdpZHRoPSIxMTQuNDk2IiBoZWlnaHQ9IjM1MiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQyNi4zNjgsMTY0LjEyOGMtMS4yMTYtMC4zODQtMi4zNjgtMC44LTMuNjQ4LTEuMTUyYy0xLjUzNi0wLjM1Mi0zLjA3Mi0wLjY0LTQuNjQtMC44OTYgICAgYy02LjA4LTEuMjE2LTEyLjczNi0yLjA4LTIwLjU0NC0yLjA4Yy02Ni43NTIsMC0xMDkuMDg4LDQ4LjU0NC0xMjMuMDQsNjcuMjk2VjE2MEgxNjB2MzUyaDExNC40OTZWMzIwICAgIGMwLDAsODYuNTI4LTEyMC41MTIsMTIzLjA0LTMyYzAsNzkuMDA4LDAsMjI0LDAsMjI0SDUxMlYyNzQuNDY0QzUxMiwyMjEuMjgsNDc1LjU1MiwxNzYuOTYsNDI2LjM2OCwxNjQuMTI4eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPGNpcmNsZSBjeD0iNTYiIGN5PSI1NiIgcj0iNTYiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"/>
+            </a>
+            <a href="https://github.com/AlanDelip" target="_blank"
+               class="flex-wrp items-center ml-s">
+                <img alt="github-icon"
+                     src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDQzOC41MzYgNDM4LjUzNiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDM4LjUzNiA0MzguNTM2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTE1OC4xNzMsMzUyLjU5OWMtMy4wNDksMC41NjgtNC4zODEsMS45OTktMy45OTksNC4yODFjMC4zOCwyLjI4MywyLjA5MywzLjA0Niw1LjEzOCwyLjI4MyAgICBjMy4wNDktMC43Niw0LjM4LTIuMDk1LDMuOTk3LTMuOTk3QzE2Mi45MzEsMzUzLjA3NCwxNjEuMjE4LDM1Mi4yMTYsMTU4LjE3MywzNTIuNTk5eiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwYXRoIGQ9Ik0xNDEuODk4LDM1NC44ODVjLTMuMDQ2LDAtNC41NjgsMS4wNDEtNC41NjgsMy4xMzljMCwyLjQ3NCwxLjYxOSwzLjUxOCw0Ljg1MywzLjEzOGMzLjA0NiwwLDQuNTctMS4wNDcsNC41Ny0zLjEzOCAgICBDMTQ2Ljc1MywzNTUuNTUzLDE0NS4xMzQsMzU0LjUwMiwxNDEuODk4LDM1NC44ODV6IiBmaWxsPSIjRkZGRkZGIi8+CgkJPHBhdGggZD0iTTExOS42MjksMzU0LjAyMmMtMC43NiwyLjA5NSwwLjQ3OCwzLjUxOSwzLjcxMSw0LjI4NGMyLjg1NSwxLjEzNyw0LjY2NCwwLjU2OCw1LjQyNC0xLjcxNCAgICBjMC41NzItMi4wOTEtMC42NjYtMy42MS0zLjcxMS00LjU2OEMxMjIuMTk3LDM1MS4yNjUsMTIwLjM5LDM1MS45MjIsMTE5LjYyOSwzNTQuMDIyeiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwYXRoIGQ9Ik00MTQuNDEsMjQuMTIzQzM5OC4zMjYsOC4wNDIsMzc4Ljk2NCwwLDM1Ni4zMDksMEg4Mi4yMjVDNTkuNTc3LDAsNDAuMjA4LDguMDQyLDI0LjEyMywyNC4xMjMgICAgQzguMDQyLDQwLjIwNywwLDU5LjU3NiwwLDgyLjIyNXYyNzQuMDg4YzAsMjIuNjUsOC4wNDIsNDIuMDE3LDI0LjEyMyw1OC4wOThjMTYuMDg0LDE2LjA4NCwzNS40NTQsMjQuMTI2LDU4LjEwMiwyNC4xMjZoNjMuOTUzICAgIGM0LjE4NCwwLDcuMzI3LTAuMTQ0LDkuNDItMC40MjRjMi4wOTItMC4yODgsNC4xODQtMS41MjYsNi4yNzktMy43MTdjMi4wOTYtMi4xODcsMy4xNC01LjM3NiwzLjE0LTkuNTYyICAgIGMwLTAuNTY4LTAuMDUtNy4wNDYtMC4xNDQtMTkuNDE3Yy0wLjA5Ny0xMi4zNzUtMC4xNDQtMjIuMTc2LTAuMTQ0LTI5LjQxbC02LjU2NywxLjE0M2MtNC4xODcsMC43Ni05LjQ2OSwxLjA5NS0xNS44NDYsMC45OTkgICAgYy02LjM3NC0wLjA5Ni0xMi45OS0wLjc2LTE5Ljg0MS0xLjk5OGMtNi44NTUtMS4yMzktMTMuMjI5LTQuMDkzLTE5LjEzLTguNTYyYy01Ljg5OC00LjQ3Ny0xMC4wODUtMTAuMzI4LTEyLjU2LTE3LjU1OSAgICBsLTIuODU2LTYuNTcxYy0xLjkwMy00LjM3My00Ljg5OS05LjIyOS04Ljk5Mi0xNC41NTRjLTQuMDkzLTUuMzMyLTguMjMyLTguOTQ5LTEyLjQxOS0xMC44NTJsLTEuOTk5LTEuNDI4ICAgIGMtMS4zMzEtMC45NTEtMi41NjgtMi4wOTgtMy43MTEtMy40MjljLTEuMTQxLTEuMzM1LTEuOTk3LTIuNjY5LTIuNTY4LTMuOTk3Yy0wLjU3MS0xLjMzNS0wLjA5Ny0yLjQzLDEuNDI3LTMuMjg5ICAgIGMxLjUyNC0wLjg1NSw0LjI4MS0xLjI3OSw4LjI4LTEuMjc5bDUuNzA4LDAuODU1YzMuODA4LDAuNzYsOC41MTYsMy4wNDIsMTQuMTM0LDYuODUxYzUuNjE0LDMuODA2LDEwLjIyOSw4Ljc1NCwxMy44NDYsMTQuODQzICAgIGM0LjM4LDcuODA2LDkuNjU3LDEzLjc1LDE1Ljg0NiwxNy44NDNjNi4xODQsNC4wOTcsMTIuNDE5LDYuMTQzLDE4LjY5OSw2LjE0M3MxMS43MDQtMC40NzYsMTYuMjc0LTEuNDI0ICAgIGM0LjU2NS0wLjk1NCw4Ljg0OC0yLjM4NSwxMi44NDctNC4yODhjMS43MTMtMTIuNzUxLDYuMzc3LTIyLjU1OSwxMy45ODgtMjkuNDFjLTEwLjg0OC0xLjE0My0yMC42MDItMi44NTQtMjkuMjY1LTUuMTQgICAgYy04LjY1OC0yLjI4Ni0xNy42MDUtNS45OTUtMjYuODM1LTExLjEzNmMtOS4yMzQtNS4xNC0xNi44OTQtMTEuNTEyLTIyLjk4NS0xOS4xM2MtNi4wOS03LjYxOC0xMS4wODgtMTcuNjEtMTQuOTg3LTI5Ljk3OCAgICBjLTMuOTAxLTEyLjM3NS01Ljg1Mi0yNi42NTItNS44NTItNDIuODI5YzAtMjMuMDI5LDcuNTIxLTQyLjYzNywyMi41NTctNTguODE0Yy03LjA0NC0xNy4zMi02LjM3OS0zNi43MzIsMS45OTctNTguMjQyICAgIGM1LjUyLTEuNzE0LDEzLjcwNi0wLjQyOCwyNC41NTQsMy44NTVjMTAuODUsNC4yODYsMTguNzk0LDcuOTUxLDIzLjg0LDEwLjk5MmM1LjA0NiwzLjA0Miw5LjA4OSw1LjYxNCwxMi4xMzUsNy43MSAgICBjMTcuNzA1LTQuOTQ5LDM1Ljk3Ni03LjQyMyw1NC44MTgtNy40MjNjMTguODQxLDAsMzcuMTE1LDIuNDc0LDU0LjgyMSw3LjQyM2wxMC44NDktNi44NTJjNy40MjYtNC41NywxNi4xOC04Ljc1NywyNi4yNjktMTIuNTYyICAgIGMxMC4wODgtMy44MDYsMTcuNzk1LTQuODU0LDIzLjEyNy0zLjE0YzguNTYyLDIxLjUxLDkuMzI4LDQwLjkyMiwyLjI3OSw1OC4yNDFjMTUuMDM2LDE2LjE3OSwyMi41NTksMzUuNzg2LDIyLjU1OSw1OC44MTUgICAgYzAsMTYuMTgtMS45NTEsMzAuNTA1LTUuODUyLDQyLjk2OWMtMy44OTgsMTIuNDY3LTguOTM5LDIyLjQ2My0xNS4xMywyOS45ODFjLTYuMTg0LDcuNTE5LTEzLjg5NCwxMy44NDMtMjMuMTI0LDE4Ljk4NiAgICBjLTkuMjMyLDUuMTM3LTE4LjE3OCw4Ljg1My0yNi44NCwxMS4xMzJjLTguNjYxLDIuMjg2LTE4LjQxNCw0LjAwNC0yOS4yNjMsNS4xNDdjOS44OTEsOC41NjIsMTQuODM5LDIyLjA3MiwxNC44MzksNDAuNTM4djY4LjIzOCAgICBjMCwzLjIzNywwLjQ3Miw1Ljg1MiwxLjQyNCw3Ljg1MWMwLjk1OCwxLjk5OCwyLjQ3OCwzLjM3NCw0LjU3MSw0LjE0MWMyLjEwMiwwLjc2LDMuOTQ5LDEuMjM1LDUuNTcxLDEuNDI0ICAgIGMxLjYyMiwwLjE5MSwzLjk0OSwwLjI4Nyw2Ljk5NSwwLjI4N2g2My45NTNjMjIuNjQ4LDAsNDIuMDE4LTguMDQyLDU4LjA5NS0yNC4xMjZjMTYuMDg0LTE2LjA4NCwyNC4xMjYtMzUuNDU0LDI0LjEyNi01OC4xMDIgICAgVjgyLjIyNUM0MzguNTMzLDU5LjU3Niw0MzAuNDkxLDQwLjIwNCw0MTQuNDEsMjQuMTIzeiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwYXRoIGQ9Ik04Ni43OTMsMzE5LjE5NWMtMS4zMzEsMC45NDgtMS4xNDEsMi40NzEsMC41NzIsNC41NjVjMS45MDYsMS45MDIsMy40MjcsMi4xODksNC41NywwLjg1NSAgICBjMS4zMzEtMC45NDgsMS4xNDEtMi40NzEtMC41NzUtNC41NjlDODkuNDU4LDMxOC4zMzYsODcuOTM2LDMxOC4wNDksODYuNzkzLDMxOS4xOTV6IiBmaWxsPSIjRkZGRkZGIi8+CgkJPHBhdGggZD0iTTc3LjM3NCwzMTIuMDU3Yy0wLjU3LDEuMzM1LDAuMDk2LDIuNDc4LDEuOTk5LDMuNDI2YzEuNTIxLDAuOTU1LDIuNzYyLDAuNzY3LDMuNzExLTAuNTY4ICAgIGMwLjU3LTEuMzM1LTAuMDk2LTIuNDc4LTEuOTk5LTMuNDMzQzc5LjE4MiwzMTAuOTEsNzcuOTQ1LDMxMS4xMDIsNzcuMzc0LDMxMi4wNTd6IiBmaWxsPSIjRkZGRkZGIi8+CgkJPHBhdGggZD0iTTk1LjY0NiwzMzAuMzMxYy0xLjcxNSwwLjk0OC0xLjcxNSwyLjY2NiwwLDUuMTM3YzEuNzEzLDIuNDc4LDMuMzI4LDMuMTQyLDQuODUzLDEuOTk4YzEuNzE0LTEuMzM0LDEuNzE0LTMuMTQyLDAtNS40MjcgICAgQzk4Ljk3OCwzMjkuNTcxLDk3LjM1OSwzMjguOTkzLDk1LjY0NiwzMzAuMzMxeiIgZmlsbD0iI0ZGRkZGRiIvPgoJCTxwYXRoIGQ9Ik0xMDUuNjQxLDM0My4xNzRjLTEuNzE0LDEuNTI2LTEuMzM2LDMuMzI3LDEuMTQyLDUuNDI4YzIuMjgxLDIuMjc5LDQuMTg1LDIuNTY2LDUuNzA4LDAuODQ5ICAgIGMxLjUyNC0xLjUxOSwxLjE0My0zLjMyNi0xLjE0Mi01LjQyQzEwOS4wNjgsMzQxLjc1MSwxMDcuMTY0LDM0MS40NjMsMTA1LjY0MSwzNDMuMTc0eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="/>
+            </a>
+            <a href="mailto:zhufeng.xu@columbia.edu"
+               class="flex-wrp items-center ml-s">
+                <img alt="mail-icon"
+                     src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDUxMS42MjYgNTExLjYyNiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTExLjYyNiA1MTEuNjI2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ5LjEwNiwxNzguNzI5YzYuNDcyLDQuNTY3LDI1Ljk4MSwxOC4xMzEsNTguNTI4LDQwLjY4NWMzMi41NDgsMjIuNTU0LDU3LjQ4MiwzOS45Miw3NC44MDMsNTIuMDk5ICAgIGMxLjkwMywxLjMzNSw1Ljk0Niw0LjIzNywxMi4xMzEsOC43MWM2LjE4Niw0LjQ3NiwxMS4zMjYsOC4wOTMsMTUuNDE2LDEwLjg1MmM0LjA5MywyLjc1OCw5LjA0MSw1Ljg1MiwxNC44NDksOS4yNzcgICAgYzUuODA2LDMuNDIyLDExLjI3OSw1Ljk5NiwxNi40MTgsNy43YzUuMTQsMS43MTgsOS44OTgsMi41NjksMTQuMjc1LDIuNTY5aDAuMjg3aDAuMjg4YzQuMzc3LDAsOS4xMzctMC44NTIsMTQuMjc3LTIuNTY5ICAgIGM1LjEzNy0xLjcwNCwxMC42MTUtNC4yODEsMTYuNDE2LTcuN2M1LjgwNC0zLjQyOSwxMC43NTItNi41MiwxNC44NDUtOS4yNzdjNC4wOTMtMi43NTksOS4yMjktNi4zNzYsMTUuNDE3LTEwLjg1MiAgICBjNi4xODQtNC40NzcsMTAuMjMyLTcuMzc1LDEyLjEzNS04LjcxYzE3LjUwOC0xMi4xNzksNjIuMDUxLTQzLjExLDEzMy42MTUtOTIuNzljMTMuODk0LTkuNzAzLDI1LjUwMi0yMS40MTEsMzQuODI3LTM1LjExNiAgICBjOS4zMzItMTMuNjk5LDEzLjk5My0yOC4wNywxMy45OTMtNDMuMTA1YzAtMTIuNTY0LTQuNTIzLTIzLjMxOS0xMy41NjUtMzIuMjY0Yy05LjA0MS04Ljk0Ny0xOS43NDktMTMuNDE4LTMyLjExNy0xMy40MThINDUuNjc5ICAgIGMtMTQuNjU1LDAtMjUuOTMzLDQuOTQ4LTMzLjgzMiwxNC44NDRDMy45NDksNzkuNTYyLDAsOTEuOTM0LDAsMTA2Ljc3OWMwLDExLjk5MSw1LjIzNiwyNC45ODUsMTUuNzAzLDM4Ljk3NCAgICBDMjYuMTY5LDE1OS43NDMsMzcuMzA3LDE3MC43MzYsNDkuMTA2LDE3OC43Mjl6IiBmaWxsPSIjRkZGRkZGIi8+CgkJPHBhdGggZD0iTTQ4My4wNzIsMjA5LjI3NWMtNjIuNDI0LDQyLjI1MS0xMDkuODI0LDc1LjA4Ny0xNDIuMTc3LDk4LjUwMWMtMTAuODQ5LDcuOTkxLTE5LjY1LDE0LjIyOS0yNi40MDksMTguNjk5ICAgIGMtNi43NTksNC40NzMtMTUuNzQ4LDkuMDQxLTI2Ljk4LDEzLjcwMmMtMTEuMjI4LDQuNjY4LTIxLjY5Miw2Ljk5NS0zMS40MDEsNi45OTVoLTAuMjkxaC0wLjI4NyAgICBjLTkuNzA3LDAtMjAuMTc3LTIuMzI3LTMxLjQwNS02Ljk5NWMtMTEuMjI4LTQuNjYxLTIwLjIyMy05LjIyOS0yNi45OC0xMy43MDJjLTYuNzU1LTQuNDctMTUuNTU5LTEwLjcwOC0yNi40MDctMTguNjk5ICAgIGMtMjUuNjk3LTE4Ljg0Mi03Mi45OTUtNTEuNjgtMTQxLjg5Ni05OC41MDFDMTcuOTg3LDIwMi4wNDcsOC4zNzUsMTkzLjc2MiwwLDE4NC40Mzd2MjI2LjY4NWMwLDEyLjU3LDQuNDcxLDIzLjMxOSwxMy40MTgsMzIuMjY1ICAgIGM4Ljk0NSw4Ljk0OSwxOS43MDEsMTMuNDIyLDMyLjI2NCwxMy40MjJoNDIwLjI2NmMxMi41NiwwLDIzLjMxNS00LjQ3MywzMi4yNjEtMTMuNDIyYzguOTQ5LTguOTQ5LDEzLjQxOC0xOS42OTQsMTMuNDE4LTMyLjI2NSAgICBWMTg0LjQzN0M1MDMuNDQxLDE5My41NjksNDkzLjkyNywyMDEuODU0LDQ4My4wNzIsMjA5LjI3NXoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"/>
+            </a>
+            <a href="https://www.facebook.com/zhufeng.xu.7" target="_blank"
+               class="flex-wrp items-center ml-s">
+                <img alt="facebook-icon"
+                     src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNNDQ4LDBINjRDMjguNzA0LDAsMCwyOC43MDQsMCw2NHYzODRjMCwzNS4yOTYsMjguNzA0LDY0LDY0LDY0aDE5MlYzMzZoLTY0di04MGg2NHYtNjRjMC01My4wMjQsNDIuOTc2LTk2LDk2LTk2aDY0djgwICAgIGgtMzJjLTE3LjY2NCwwLTMyLTEuNjY0LTMyLDE2djY0aDgwbC0zMiw4MGgtNDh2MTc2aDk2YzM1LjI5NiwwLDY0LTI4LjcwNCw2NC02NFY2NEM1MTIsMjguNzA0LDQ4My4yOTYsMCw0NDgsMHoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K"/>
+            </a>
+            <a href="https://www.instagram.com/alan.zhufeng/" target="_blank"
+               class="flex-wrp items-center ml-s">
+                <img alt="instagram-icon"
+                     src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzUyLDBIMTYwQzcxLjY0OCwwLDAsNzEuNjQ4LDAsMTYwdjE5MmMwLDg4LjM1Miw3MS42NDgsMTYwLDE2MCwxNjBoMTkyYzg4LjM1MiwwLDE2MC03MS42NDgsMTYwLTE2MFYxNjAgICAgQzUxMiw3MS42NDgsNDQwLjM1MiwwLDM1MiwweiBNNDY0LDM1MmMwLDYxLjc2LTUwLjI0LDExMi0xMTIsMTEySDE2MGMtNjEuNzYsMC0xMTItNTAuMjQtMTEyLTExMlYxNjBDNDgsOTguMjQsOTguMjQsNDgsMTYwLDQ4ICAgIGgxOTJjNjEuNzYsMCwxMTIsNTAuMjQsMTEyLDExMlYzNTJ6IiBmaWxsPSIjRkZGRkZGIi8+Cgk8L2c+CjwvZz4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjU2LDEyOGMtNzAuNjg4LDAtMTI4LDU3LjMxMi0xMjgsMTI4czU3LjMxMiwxMjgsMTI4LDEyOHMxMjgtNTcuMzEyLDEyOC0xMjhTMzI2LjY4OCwxMjgsMjU2LDEyOHogTTI1NiwzMzYgICAgYy00NC4wOTYsMC04MC0zNS45MDQtODAtODBjMC00NC4xMjgsMzUuOTA0LTgwLDgwLTgwczgwLDM1Ljg3Miw4MCw4MEMzMzYsMzAwLjA5NiwzMDAuMDk2LDMzNiwyNTYsMzM2eiIgZmlsbD0iI0ZGRkZGRiIvPgoJPC9nPgo8L2c+CjxnPgoJPGc+CgkJPGNpcmNsZSBjeD0iMzkzLjYiIGN5PSIxMTguNCIgcj0iMTcuMDU2IiBmaWxsPSIjRkZGRkZGIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="/>
+            </a>
+        </div>
+        <div class="logo mt-s">
+            <a href="https://alan-zhufengxu.com" target="_blank" class="title">Alan's Site</a>
+        </div>
+    </div>
+    <div class="ml-s text-end">
+        <div>362 Riverside Drive, New York, NY</div>
+        <div>©2019, Alan'site. All Rights Reserved</div>
+    </div>
+</footer>
 </body>
 </html>
