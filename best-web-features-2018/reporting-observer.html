@@ -17,16 +17,113 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/alansite/resources/favicon.ico" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Open+Sans|Staatliches" rel="stylesheet">
+    <style type="text/less">
+        @import "/common/index";
+
+        main {
+            .title {
+                font-family: 'Staatliches', cursive;
+                font-size: 3em;
+            }
+
+            #console {
+                position: relative;
+                border: 3px #444 solid;
+                max-width: 100%;
+                height: 300px;
+                color: white;
+                overflow: auto;
+                padding: 1em;
+            }
+
+            .json-formatter-row {
+                font-family: Consolas, serif;
+            }
+        }
+    </style>
 </head>
 <body>
-<header class="dark">
+<header class="dark fixed ">
     <a href="https://alan-zhufengxu.com" target="_blank">
         <img alt="logo" src="/assets/alan_xu_logo.png"/>
         <div class="ml-s">Alan's Site</div>
     </a>
 </header>
 <main>
-    <div class="title">HTTP203</div>
+    <section class="content">
+        <div class="title-wrapper flex-wrp item-center content-between">
+            <div class="title">Reporting Observer</div>
+            <div class="label bg-orange">Javascript</div>
+        </div>
+        <div class="desc">
+            <div class="title">
+                HTTP203 Description
+            </div>
+            <div class="simple-desc">
+                <div>
+                    <i>
+                        "Gives you a report for any kind of deprecated API you're using or for interventions you have
+                        triggered."
+                    </i>
+                </div>
+                <div class="referencer">-- By Surma</div>
+            </div>
+        </div>
+        <div class="desc">
+            <div class="title">
+                Implementation Description
+            </div>
+            <div class="implementation">
+                <div id="console"></div>
+                <p>
+                    This is a self-made console synchronously conveying messages from the real console. When hitting
+                    certain features that trigger deprecated functions, errors will be captured by ReportingObserver.
+                    You can try to insert deprecated scripts or interventions using console to see what Reporting
+                    Observer will catch.
+                </p>
+                <div class="btn" onclick="G.startObserve()">Start Observe</div>
+                <div class="btn" onclick="G.stopObserve()">Stop Observe</div>
+                <div>
+                    <i>
+                        * It works only in Chrome 69+ (updated after July 2018).
+                    </i>
+                </div>
+            </div>
+        </div>
+        <div class="desc">
+            <div class="title">
+                HTTP202 - Official Description
+            </div>
+            <div class="official-desc">
+                <div>
+                    This is not a standardized feature for all browsers and it's only showing up in Chrome. But we do
+                    have other observers across browsers like IntersectionObserver, MutationObserver and ResizeObserver.
+                </div>
+                <div class="referencer">
+                    <span>@See also</span>
+                    <a href="https://developers.google.com/web/updates/2018/07/reportingobserver" target="_blank">
+                        Update from Google Developers
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="navigator mt-m">
+        <a href="/http203/" class="flex-wrp item-center">
+            <div class="mr-s">←</div>
+            <div class="flex-wrp flex-column">
+                <div>Back</div>
+                <div class="desc">to HTTP203 List</div>
+            </div>
+        </a>
+        <a href="https://alan-zhufengxu.com" target="_blank" class="flex-wrp item-center">
+            <div class="flex-wrp flex-column">
+                <div>See More Projects</div>
+                <div class="desc">At Alan's Site</div>
+            </div>
+            <div class="ml-s">→</div>
+        </a>
+    </section>
 </main>
 <footer>
     <div>
@@ -66,5 +163,6 @@
         <div>©2019, Alan'site. All Rights Reserved</div>
     </div>
 </footer>
+<script src="ReportingObserver.js"></script>
 </body>
 </html>

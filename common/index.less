@@ -24,6 +24,11 @@ body {
 
   a {
     color: #6497b0;
+
+
+    &:not([href]) {
+      color: #444444;
+    }
   }
 }
 
@@ -88,12 +93,14 @@ header {
 }
 
 main {
+  padding: 6em 20vw;
   min-height: 50vh;
 
   .label {
     display: inline;
     border-radius: 1.5em;
     padding: .3em 1.5em;
+    font-size: .85em;
     color: white;
 
     &.bg-orange {
@@ -104,7 +111,6 @@ main {
   .content {
     background: white;
     margin: 0;
-    padding: 6em 20vw 0;
     font-size: 1.1em;
     color: #444;
 
@@ -133,8 +139,9 @@ main {
   }
 
   .navigator {
+    padding-top: 1em;
+    padding-bottom: 1em;
     font-family: 'Staatliches', cursive;
-    padding: 1em 20vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -178,6 +185,15 @@ footer {
       filter: invert(.7);
     }
   }
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: .4em 1.5em;
+  background: coral;
+  color: white;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, .1);
 }
 
 .mt-s {
