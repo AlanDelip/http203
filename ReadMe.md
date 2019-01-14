@@ -12,7 +12,7 @@ Inspired by & Thanks to:
 
 ## Feature List
 *sort by newest first*
-- Best web features of 2018
+- Best Web Features of 2018
     - [display: contents;](https://project.alan-zhufengxu.com/http203/best-web-features-2018/display-contents.html)
     - ReportingObserver
     - Scroll Snap

@@ -12,28 +12,86 @@
     <meta name="verify" content="index,follow"/>
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Open+Sans|Staatliches" rel="stylesheet">
     <link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/alansite/resources/favicon.ico" type="image/x-icon"/>
-    <style type="text/less">
-        @import "common/index";
+</head>
+<style type="text/less">
+    @import "common/index";
 
-        main {
-            padding: 6em 20vw;
+    main {
+        padding: 6em 20vw;
 
-            .title {
-                font-family: 'Staatliches', cursive;
-                font-size: 3em;
+        .title {
+            font-family: 'Staatliches', cursive;
+            font-size: 3em;
+        }
+
+        .menu {
+            font-size: 1.1em;
+            line-height: 1.5em;
+
+            a {
+                text-decoration: none;
             }
 
-            .menu {
-                font-size: 1.1em;
-                line-height: 1.5em;
+            li {
+                position: relative;
+            }
 
-                a {
-                    text-decoration: none;
+            .sub-menu {
+                li:last-child {
+                    padding-bottom: .75em;
                 }
             }
+
+            .subtitle {
+                font-weight: bold;
+            }
         }
-    </style>
-</head>
+
+        .timeline {
+            position: absolute;
+            top: 0;
+            left: -11em;
+            height: 100%;
+            border-left: 3px solid #444444;
+        }
+
+        .timeline-continue {
+            position: absolute !important;
+            list-style-type: none;
+            top: 100%;
+            left: -8.73em;
+            height: 5em;
+            border-left: 3px dashed #444444;
+        }
+
+        .timeline-item {
+            position: absolute;
+            top: 0;
+            left: -5em;
+            font-size: .85em;
+            font-weight: bold;
+            transform: translateX(-100%);
+        }
+
+        .root {
+            position: absolute;
+            top: 0;
+            left: -11em;
+            width: 14px;
+            height: 3px;
+            border-top: 3px solid #444444;
+        }
+
+        .leaf {
+            position: absolute;
+            top: 0;
+            left: -13.2em;
+            width: 7px;
+            height: 1px;
+            border-top: 1px solid #888888;
+        }
+    }
+</style>
 <body>
 <header class="dark fixed">
     <a href="https://alan-zhufengxu.com" target="_blank">
@@ -43,86 +101,137 @@
 </header>
 <main>
     <div class="title">HTTP203</div>
-    <ul class="menu">
+    <ul class="menu relative">
+        <li class="timeline-continue"></li>
         <li>
-            Best Web Features in 2018
-            <ul>
+            <div class="timeline"></div>
+            <div class="root"></div>
+            <div class="subtitle">
+                Best Web Features in 2018
+            </div>
+            <div class="timeline-item">
+                <div>Dec 17, 2018</div>
+            </div>
+            <ul class="sub-menu">
                 <li>
+                    <div class="leaf"></div>
                     <a href="best-web-features-2018/display-contents.html">
                         display: contents;
                     </a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>ReportingObserver</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Scroll Snap</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Named Worker</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Conic Gradient</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Async Clipboard API</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>CSS Typed OM</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>updateViaCache</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Bitmaprendererer</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Web Locks</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>CSS Paint API</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>toggleAttribute</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>OffscreenCanvas</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Focus PreventScroll</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Sensors</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>BigInt</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Page Lifecycle API</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>trimStart/End</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>import.meta</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>RegEx Named Capture Groups</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Intl.RelativeTimeFormat</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>ResizeObserver</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Audio Worklet</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Fetch Cache Mode</a>
                 </li>
                 <li>
+                    <div class="leaf"></div>
                     <a>Class Fields</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="timeline"></div>
+            <div class="root"></div>
+            <div class="subtitle">
+                Old vs. New Javascript
+            </div>
+            <div class="timeline-item">
+                <div>Dec 04, 2018</div>
+            </div>
+            <ul class="sub-menu">
+                <li>
+                    <div class="leaf"></div>
+                    <a>
+                        Web Animation API
+                    </a>
                 </li>
             </ul>
         </li>
