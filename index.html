@@ -15,6 +15,39 @@
     <style type="text/less">
         @import "common/index";
 
+        .search-wrapper {
+            input {
+                font-family: 'Open Sans', sans-serif;
+                font-size: 1em;
+                padding: .4em .5em;
+                border: #444 2px solid;
+                width: 30vw;
+                transition: all .3s ease-in-out;
+                transform: translateX(-30%);
+                opacity: 0;
+                z-index: -1;
+            }
+
+            .search-btn {
+                cursor: pointer;
+                width: 2em;
+                height: 2em;
+                transition: all .3s ease-in-out;
+
+                &.open {
+                    opacity: 1;
+                    transform: rotate(0);
+                }
+
+                &.close {
+                    opacity: 0;
+                    transform: rotate(180deg);
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+
         main {
             .title {
                 font-family: 'Staatliches', cursive;
@@ -87,6 +120,44 @@
                 height: 1px;
                 border-top: 1px solid #888888;
             }
+
+            .highlight {
+                animation: highlight 3s;
+            }
+
+            @keyframes highlight {
+                0% {
+                    background: white;
+                }
+                20% {
+                    background: yellow;
+                }
+                100% {
+                    background: white;
+                }
+            }
+
+            .not-found {
+                animation: shake .5s;
+            }
+
+            @keyframes shake {
+                0% {
+                    transform: translateX(0)
+                }
+                25% {
+                    transform: translateX(10px)
+                }
+                50% {
+                    transform: translateX(0)
+                }
+                75% {
+                    transform: translateX(10px)
+                }
+                100% {
+                    transform: translateX(0)
+                }
+            }
         }
     </style>
 </head>
@@ -98,7 +169,16 @@
     </a>
 </header>
 <main>
-    <div class="title">HTTP203</div>
+    <section class="search-wrapper flex-wrp item-center">
+        <div class="title">HTTP203</div>
+        <div class="flex-wrp item-center ml-s relative">
+            <img onclick="toggleSearch()" alt="search-icon" class="search-btn open"
+                 src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDQ4NS4yMTMgNDg1LjIxMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg1LjIxMyA0ODUuMjEzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTM2My45MDksMTgxLjk1NUMzNjMuOTA5LDgxLjQ3MywyODIuNDQsMCwxODEuOTU2LDBDODEuNDc0LDAsMC4wMDEsODEuNDczLDAuMDAxLDE4MS45NTVzODEuNDczLDE4MS45NTEsMTgxLjk1NSwxODEuOTUxICAgIEMyODIuNDQsMzYzLjkwNiwzNjMuOTA5LDI4Mi40MzcsMzYzLjkwOSwxODEuOTU1eiBNMTgxLjk1NiwzMTguNDE2Yy03NS4yNTIsMC0xMzYuNDY1LTYxLjIwOC0xMzYuNDY1LTEzNi40NiAgICBjMC03NS4yNTIsNjEuMjEzLTEzNi40NjUsMTM2LjQ2NS0xMzYuNDY1Yzc1LjI1LDAsMTM2LjQ2OCw2MS4yMTMsMTM2LjQ2OCwxMzYuNDY1ICAgIEMzMTguNDI0LDI1Ny4yMDgsMjU3LjIwNiwzMTguNDE2LDE4MS45NTYsMzE4LjQxNnoiIGZpbGw9IiM0NDQ0NDQiLz4KCQk8cGF0aCBkPSJNNDcxLjg4Miw0MDcuNTY3TDM2MC41NjcsMjk2LjI0M2MtMTYuNTg2LDI1Ljc5NS0zOC41MzYsNDcuNzM0LTY0LjMzMSw2NC4zMjFsMTExLjMyNCwxMTEuMzI0ICAgIGMxNy43NzIsMTcuNzY4LDQ2LjU4NywxNy43NjgsNjQuMzIxLDBDNDg5LjY1NCw0NTQuMTQ5LDQ4OS42NTQsNDI1LjMzNCw0NzEuODgyLDQwNy41Njd6IiBmaWxsPSIjNDQ0NDQ0Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="/>
+            <img onclick="toggleSearch()" alt="search-close-icon" class="search-btn close"
+                 src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDIxLjkgMjEuOSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjEuOSAyMS45IiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KICA8cGF0aCBkPSJNMTQuMSwxMS4zYy0wLjItMC4yLTAuMi0wLjUsMC0wLjdsNy41LTcuNWMwLjItMC4yLDAuMy0wLjUsMC4zLTAuN3MtMC4xLTAuNS0wLjMtMC43bC0xLjQtMS40QzIwLDAuMSwxOS43LDAsMTkuNSwwICBjLTAuMywwLTAuNSwwLjEtMC43LDAuM2wtNy41LDcuNWMtMC4yLDAuMi0wLjUsMC4yLTAuNywwTDMuMSwwLjNDMi45LDAuMSwyLjYsMCwyLjQsMFMxLjksMC4xLDEuNywwLjNMMC4zLDEuN0MwLjEsMS45LDAsMi4yLDAsMi40ICBzMC4xLDAuNSwwLjMsMC43bDcuNSw3LjVjMC4yLDAuMiwwLjIsMC41LDAsMC43bC03LjUsNy41QzAuMSwxOSwwLDE5LjMsMCwxOS41czAuMSwwLjUsMC4zLDAuN2wxLjQsMS40YzAuMiwwLjIsMC41LDAuMywwLjcsMC4zICBzMC41LTAuMSwwLjctMC4zbDcuNS03LjVjMC4yLTAuMiwwLjUtMC4yLDAuNywwbDcuNSw3LjVjMC4yLDAuMiwwLjUsMC4zLDAuNywwLjNzMC41LTAuMSwwLjctMC4zbDEuNC0xLjRjMC4yLTAuMiwwLjMtMC41LDAuMy0wLjcgIHMtMC4xLTAuNS0wLjMtMC43TDE0LjEsMTEuM3oiIGZpbGw9IiM0NDQ0NDQiLz4KPC9zdmc+Cg=="/>
+            <input id="search-input" aria-label="search" type="text" class="ml-s"/>
+        </div>
+    </section>
     <ul class="menu relative">
         <li class="timeline-continue"></li>
         <li>
@@ -269,5 +349,64 @@
         <div>©2019, Alan'site. All Rights Reserved</div>
     </div>
 </footer>
+<script>
+	document.querySelector('#search-input').addEventListener('keypress', function (e) {
+		let key = e.which || e.keyCode;
+		if (key === 13) {
+			search();
+		}
+	});
+
+	function toggleSearch() {
+		let input = document.querySelector(".search-wrapper input");
+		let close = document.querySelector(".search-wrapper .close");
+		let open = document.querySelector(".search-wrapper .open");
+
+		if (input.style.opacity && input.style.opacity != 0) {
+			input.style.opacity = 0;
+			input.style.transform = 'translateX(-30%)';
+			input.style.zIndex = -1;
+
+			close.style.transform = 'rotate(180deg)';
+			close.style.opacity = 0;
+			open.style.transform = 'rotate(0)';
+			open.style.opacity = 1;
+		} else {
+			input.style.opacity = 1;
+			input.style.transform = 'translateX(0)';
+			input.style.zIndex = 0;
+
+			open.style.transform = 'rotate(360deg)';
+			open.style.opacity = 0;
+			close.style.transform = 'rotate(0)';
+			close.style.opacity = 1;
+			document.querySelector("input").focus();
+		}
+	}
+
+	function search() {
+		let searchInput = document.querySelector("input");
+		let searchText = searchInput.value;
+		let foundMatch = false;
+		document.querySelectorAll(".menu a").forEach(ele => {
+			let name = ele.innerText.trim().toLowerCase();
+			if (name.indexOf(searchText) !== -1) {
+				foundMatch = true;
+				window.scrollTo({top: ele.getBoundingClientRect().top - 150, behavior: 'smooth'});
+				ele.parentElement.setAttribute("class", "highlight");
+				setTimeout(() => {
+					ele.parentElement.setAttribute("class", "");
+				}, 3000);
+			}
+		});
+
+		if (!foundMatch) {
+			searchInput.setAttribute("class", "ml-s not-found");
+			setTimeout(() => {
+				searchInput.setAttribute("class", "ml-s");
+			}, 500);
+		}
+	}
+</script>
 </body>
 </html>
