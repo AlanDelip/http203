@@ -2,7 +2,6 @@
 .idea/
 target/
 dist/
-build/
+build/*
 .cache/
 node_modules/
-
