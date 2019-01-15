@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
-    <title>Conic Gradient</title>
-    <meta name="keywords" content="zhufengxu blog http203 namedworker"/>
+    <title>toggleAttribute</title>
+    <meta name="keywords" content="zhufengxu blog http203 toggleattribute"/>
     <meta name="description"
           content="Zhufeng Xu (Alan)'s personal website & blog, sharing an unofficial repository, implementing Non-Authoritative Information(http status code 203) and top-notch techs about Javascript and Frontend issues from Google fellows."/>
     <meta name="author" content="Zhufeng Xu (Alan)"/>
@@ -20,40 +20,63 @@
     <style type="text/less">
         @import "/common/index";
 
-        .gradient {
-            width: 100%;
-            height: 75px;
-            position: absolute;
-            top: 0;
-            background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+        .text {
+            list-style: none;
+            border-bottom: 0;
+            padding-left: 0;
+            padding-top: 0;
+            margin: 0;
         }
 
-        main {
-            padding: 0;
+        .text[abbreviation] {
+            height: 1em;
+            border-bottom: 2px solid #444;
+        }
 
-            .content {
-                padding: 6em 20vw;
-            }
+        .text[abbreviation] li.ghost {
+            opacity: 0;
+            max-width: 0;
+        }
 
-            .navigator {
-                padding: 0 20vw;
-            }
+        .text li {
+            display: inline-block;
+            float: left;
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+            max-width: 2em;
         }
     </style>
 </head>
 <body>
-<header class="light">
+<header class="dark fixed">
     <a href="https://alan-zhufengxu.com" target="_blank">
         <img alt="logo" src="https://c1.staticflickr.com/5/4879/31805591057_a8ccb69402_o.png"/>
         <div class="ml-s">Alan's Site</div>
     </a>
 </header>
-<section class="gradient"></section>
 <main>
     <section class="content">
         <div class="title-wrapper flex-wrp item-center content-between">
-            <div class="title">Conic Gradient</div>
-            <div class="label bg-orange">CSS</div>
+            <div class="title">
+                <ul class="text">
+                    <li>T</li>
+                    <li class="ghost">O</li>
+                    <li class="ghost">G</li>
+                    <li class="ghost">G</li>
+                    <li class="ghost">L</li>
+                    <li class="ghost">E</li>
+                    <li>A</li>
+                    <li class="ghost">T</li>
+                    <li class="ghost">T</li>
+                    <li class="ghost">R</li>
+                    <li class="ghost">I</li>
+                    <li class="ghost">B</li>
+                    <li class="ghost">U</li>
+                    <li class="ghost">T</li>
+                    <li class="ghost">E</li>
+                </ul>
+            </div>
+            <div class="label bg-orange">CSS/Javascript</div>
         </div>
         <div class="desc">
             <div class="title">
@@ -62,10 +85,43 @@
             <div class="simple-desc">
                 <div>
                     <i>
-                        "Literally beautiful."
+                        It's gonna toggle attributes.
                     </i>
                 </div>
-                <div class="referencer">-- By Surma</div>
+                <div class="referencer">-- By Jake</div>
+            </div>
+        </div>
+        <div class="desc">
+            <div class="title">
+                Implementation Description
+            </div>
+            <div class="implementation">
+                <div>
+                    Implementation hides in the title text. An attribute named 'abbreviation' is set linked to special
+                    CSS. Once it appears in the element, an abbreviated display will be shown.
+                </div>
+                <div class="code-wrapper">
+<pre>
+// Javascript
+document.querySelector('.title .text').toggleAttribute('abbreviation');
+
+// HTML
+&lt;ul class="text" abbreviation&gt;
+    ...
+&lt;/ul&gt;
+
+// CSS
+.text[abbreviation] {
+    border-bottom: 2px solid #444;
+    opacity: 0;
+    max-width: 0;
+}
+
+// See more detail from inspection</pre>
+                </div>
+                <div class="btn mt-s" onclick="document.querySelector('.title .text').toggleAttribute('abbreviation')">
+                    Toggle Attribute
+                </div>
             </div>
         </div>
         <div class="desc">
@@ -74,35 +130,16 @@
             </div>
             <div class="official-desc">
                 <div>
-                    The conic-gradient() CSS function creates an image consisting of a radial gradient with color
-                    transitions around a center point rather than radiating from the center. Example conical gradients
-                    include pie charts and color wheels.
+                    The toggleAttribute() method of the Element interface toggles a Boolean attribute (removing it
+                    if it
+                    is present and adding it if it is not present) on the given element.
                 </div>
                 <div class="referencer">
                     <span>-- By</span>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/conic-gradient" target="_blank">
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/toggleAttribute"
+                       target="_blank">
                         MDN Official Doc
                     </a>
-                </div>
-                <div class="referencer">
-                    <span>@See also</span>
-                    <a href="https://css-tricks.com/snippets/css/css-conic-gradient/" target="_blank">
-                        CSS-Tricks Article
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="desc">
-            <div class="title">
-                Implementation Description
-            </div>
-            <div class="implementation">
-                <div>Look at the fancy header!</div>
-                <div class="code-wrapper">
-                     <pre>
-.gradient {
-    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
-}</pre>
                 </div>
             </div>
         </div>
@@ -110,11 +147,10 @@
             <div class="title">
                 Can I Use?
             </div>
-            <p class="ciu_embed" data-feature="css-conic-gradients" data-periods="future_1,current,past_1,past_2"
-               data-accessible-colours="false">
-                <a href="http://caniuse.com/#feat=css-conic-gradients">Can I Use css-conic-gradients?</a> Data on
-                support for the css-conic-gradients feature across the major browsers from caniuse.com.
-            </p>
+            <i>Screenshot from MDN</i>
+            <img style="width: 100%;"
+                 src="assets/toggle-attribute-support.png"
+                 alt="support-table"/>
         </div>
     </section>
     <section class="navigator">
