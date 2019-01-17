@@ -13,24 +13,20 @@ Inspired by & Thanks to:
 ## Feature List
 *sort by newest first*
 - Best Web Features of 2018
-    - [display: contents;](https://project.alan-zhufengxu.com/http203/best-web-features-2018/display-contents.html)
-    - ReportingObserver
-    - Scroll Snap
-    - Named Worker
+    - [display: contents;](https://project.alan-zhufengxu.com/http203/display-contents.html)
+    - [ReportingObserver](https://project.alan-zhufengxu.com/http203/reporting-observer.html)
+    - [Scroll Snap](https://project.alan-zhufengxu.com/http203/scroll-snap.html)
     - Conic Gradient
-    - Async Clipboard API
     - CSS Typed OM
     - updateViaCache
-    - Bitmaprendererer
+    - Bitmap Renderer
     - Web Locks
     - CSS Paint API
-    - toggleAttribute
+    - [toggleAttribute](https://project.alan-zhufengxu.com/http203/toggle-attribute.html)
     - OffscreenCanvas
-    - Focus PreventScroll
     - Sensors
     - BigInt
-    - Page Lifecycle API
-    - trimStart/End
+    - [Page Lifecycle API](https://project.alan-zhufengxu.com/http203/page-lifecycle.html)
     - import.meta
     - RegEx Named Capture Groups
     - Intl.RelativeTimeFormat

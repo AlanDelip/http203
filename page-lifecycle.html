@@ -4,161 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
-    <title>HTTP203</title>
+    <title>Page Lifecycle</title>
+    <meta name="keywords" content="zhufengxu blog http203 page lifecycle"/>
+    <meta name="description"
+          content="Zhufeng Xu (Alan)'s personal website & blog, sharing an unofficial repository, implementing Non-Authoritative Information(http status code 203) and top-notch techs about Javascript and Frontend issues from Google fellows."/>
     <meta name="author" content="Zhufeng Xu (Alan)"/>
     <meta name="robots" content="index,follow"/>
     <meta name="google" content="index,follow"/>
     <meta name="googlebot" content="index,follow"/>
     <meta name="verify" content="index,follow"/>
-    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Open+Sans|Staatliches" rel="stylesheet">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <link rel="shortcut icon" href="//s3-us-west-2.amazonaws.com/alansite/resources/favicon.ico" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text|Open+Sans|Staatliches" rel="stylesheet">
     <style type="text/less">
-        @import "common/index";
+        @import "/common/index";
 
-        .search-wrapper {
-            input {
+        .page-state-wrapper {
+            font-size: 2em;
+            line-height: .7em;
+            font-family: 'Staatliches', cursive;
+            color: orange;
+
+            label {
                 font-family: 'Open Sans', sans-serif;
-                font-size: 1em;
-                padding: .4em .5em;
-                border: #444 2px solid;
-                width: 30vw;
-                transition: all .3s ease-in-out;
-                transform: translateX(-30%);
-                opacity: 0;
-                z-index: -1;
-            }
-
-            .search-btn {
-                cursor: pointer;
-                width: 2em;
-                height: 2em;
-                transition: all .3s ease-in-out;
-
-                &.open {
-                    opacity: 1;
-                    transform: rotate(0);
-                }
-
-                &.close {
-                    opacity: 0;
-                    transform: rotate(180deg);
-                    position: absolute;
-                    left: 0;
-                }
+                font-size: .45em;
             }
         }
 
-        main {
-            .title {
-                font-family: 'Staatliches', cursive;
-                font-size: 3em;
-            }
-
-            .menu {
-                font-size: 1.1em;
-                line-height: 1.5em;
-
-                a {
-                    text-decoration: none;
-                }
-
-                li {
-                    position: relative;
-                }
-
-                .sub-menu {
-                    li:last-child {
-                        padding-bottom: .75em;
-                    }
-                }
-
-                .subtitle {
-                    font-weight: bold;
-                }
-            }
-
-            .timeline {
-                position: absolute;
-                top: 0;
-                left: -11em;
-                height: 100%;
-                border-left: 3px solid #444444;
-            }
-
-            .timeline-continue {
-                position: absolute !important;
-                list-style-type: none;
-                top: 100%;
-                left: -8.73em;
-                height: 5em;
-                border-left: 3px dashed #444444;
-            }
-
-            .timeline-item {
-                position: absolute;
-                top: 0;
-                left: -5em;
-                font-size: .85em;
-                font-weight: bold;
-                transform: translateX(-100%);
-            }
-
-            .root {
-                position: absolute;
-                top: 0;
-                left: -11em;
-                width: 14px;
-                height: 3px;
-                border-top: 3px solid #444444;
-            }
-
-            .leaf {
-                position: absolute;
-                top: 0;
-                left: -13.2em;
-                width: 7px;
-                height: 1px;
-                border-top: 1px solid #888888;
-            }
-
-            .highlight {
-                animation: highlight 3s;
-            }
-
-            @keyframes highlight {
-                0% {
-                    background: white;
-                }
-                20% {
-                    background: yellow;
-                }
-                100% {
-                    background: white;
-                }
-            }
-
-            .not-found {
-                animation: shake .5s;
-            }
-
-            @keyframes shake {
-                0% {
-                    transform: translateX(0)
-                }
-                25% {
-                    transform: translateX(10px)
-                }
-                50% {
-                    transform: translateX(0)
-                }
-                75% {
-                    transform: translateX(10px)
-                }
-                100% {
-                    transform: translateX(0)
-                }
-            }
+        #page-event {
+            overflow-x: auto;
+            max-width: 100%;
+            padding: 0 1em .5em 0;
         }
+
     </style>
 </head>
 <body>
@@ -169,135 +48,103 @@
     </a>
 </header>
 <main>
-    <section class="search-wrapper flex-wrp item-center">
-        <div class="title">HTTP203</div>
-        <div class="flex-wrp item-center ml-s relative">
-            <img onclick="G.toggleSearch()" alt="search-icon" class="search-btn open"
-                 src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDQ4NS4yMTMgNDg1LjIxMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg1LjIxMyA0ODUuMjEzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTM2My45MDksMTgxLjk1NUMzNjMuOTA5LDgxLjQ3MywyODIuNDQsMCwxODEuOTU2LDBDODEuNDc0LDAsMC4wMDEsODEuNDczLDAuMDAxLDE4MS45NTVzODEuNDczLDE4MS45NTEsMTgxLjk1NSwxODEuOTUxICAgIEMyODIuNDQsMzYzLjkwNiwzNjMuOTA5LDI4Mi40MzcsMzYzLjkwOSwxODEuOTU1eiBNMTgxLjk1NiwzMTguNDE2Yy03NS4yNTIsMC0xMzYuNDY1LTYxLjIwOC0xMzYuNDY1LTEzNi40NiAgICBjMC03NS4yNTIsNjEuMjEzLTEzNi40NjUsMTM2LjQ2NS0xMzYuNDY1Yzc1LjI1LDAsMTM2LjQ2OCw2MS4yMTMsMTM2LjQ2OCwxMzYuNDY1ICAgIEMzMTguNDI0LDI1Ny4yMDgsMjU3LjIwNiwzMTguNDE2LDE4MS45NTYsMzE4LjQxNnoiIGZpbGw9IiM0NDQ0NDQiLz4KCQk8cGF0aCBkPSJNNDcxLjg4Miw0MDcuNTY3TDM2MC41NjcsMjk2LjI0M2MtMTYuNTg2LDI1Ljc5NS0zOC41MzYsNDcuNzM0LTY0LjMzMSw2NC4zMjFsMTExLjMyNCwxMTEuMzI0ICAgIGMxNy43NzIsMTcuNzY4LDQ2LjU4NywxNy43NjgsNjQuMzIxLDBDNDg5LjY1NCw0NTQuMTQ5LDQ4OS42NTQsNDI1LjMzNCw0NzEuODgyLDQwNy41Njd6IiBmaWxsPSIjNDQ0NDQ0Ii8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg=="/>
-            <img onclick="G.toggleSearch()" alt="search-close-icon" class="search-btn close"
-                 src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDIxLjkgMjEuOSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjEuOSAyMS45IiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KICA8cGF0aCBkPSJNMTQuMSwxMS4zYy0wLjItMC4yLTAuMi0wLjUsMC0wLjdsNy41LTcuNWMwLjItMC4yLDAuMy0wLjUsMC4zLTAuN3MtMC4xLTAuNS0wLjMtMC43bC0xLjQtMS40QzIwLDAuMSwxOS43LDAsMTkuNSwwICBjLTAuMywwLTAuNSwwLjEtMC43LDAuM2wtNy41LDcuNWMtMC4yLDAuMi0wLjUsMC4yLTAuNywwTDMuMSwwLjNDMi45LDAuMSwyLjYsMCwyLjQsMFMxLjksMC4xLDEuNywwLjNMMC4zLDEuN0MwLjEsMS45LDAsMi4yLDAsMi40ICBzMC4xLDAuNSwwLjMsMC43bDcuNSw3LjVjMC4yLDAuMiwwLjIsMC41LDAsMC43bC03LjUsNy41QzAuMSwxOSwwLDE5LjMsMCwxOS41czAuMSwwLjUsMC4zLDAuN2wxLjQsMS40YzAuMiwwLjIsMC41LDAuMywwLjcsMC4zICBzMC41LTAuMSwwLjctMC4zbDcuNS03LjVjMC4yLTAuMiwwLjUtMC4yLDAuNywwbDcuNSw3LjVjMC4yLDAuMiwwLjUsMC4zLDAuNywwLjNzMC41LTAuMSwwLjctMC4zbDEuNC0xLjRjMC4yLTAuMiwwLjMtMC41LDAuMy0wLjcgIHMtMC4xLTAuNS0wLjMtMC43TDE0LjEsMTEuM3oiIGZpbGw9IiM0NDQ0NDQiLz4KPC9zdmc+Cg=="/>
-            <input id="search-input" aria-label="search" type="text" class="ml-s"/>
+    <section class="content">
+        <div class="title-wrapper flex-wrp item-center content-between">
+            <div class="title">Page Lifecycle API</div>
+            <div class="label bg-orange">Browser/Javascript</div>
+        </div>
+        <div class="desc">
+            <div class="title">
+                HTTP203 Description
+            </div>
+            <div class="simple-desc">
+                <div>
+                    <i>
+                        It takes stuff that mobile browsers already do, discarding tabs, because to save memory. It kind
+                        of wraps a spec around it.
+                    </i>
+                </div>
+                <div class="referencer">-- By Jake</div>
+                <div class="mt-m">
+                    <i>
+                        The web didn't have it(lifecycle features like Apps do) and now it does. So it's a massive step
+                        in actually building something that behaves more like an App.
+                    </i>
+                </div>
+                <div class="referencer">-- By Surma</div>
+            </div>
+        </div>
+        <div class="desc">
+            <div class="title">
+                Implementation Description
+            </div>
+            <div class="implementation">
+                <div>
+                    Here we monitor on the page state and the events triggered. Try to switch between tabs and see
+                    what's happening.
+                </div>
+                <div class="flex-wrp item-center page-state-wrapper mt-s">
+                    <div class="flex-wrp flex-column">
+                        <div id="page-prev-prev-state">None</div>
+                        <label>Prev Prev State</label>
+                    </div>
+                    <div class="ml-s">→</div>
+                    <div class="flex-wrp flex-column ml-s">
+                        <div id="page-prev-state">None</div>
+                        <label>Prev State</label>
+                    </div>
+                    <div class="ml-s">→</div>
+                    <div class="flex-wrp flex-column ml-s">
+                        <div id="page-state">None</div>
+                        <label>Current State</label>
+                    </div>
+                </div>
+                <div id="page-event" class="flex-wrp item-center mt-s"></div>
+            </div>
+        </div>
+        <div class="desc">
+            <div class="title">
+                HTTP202 - Official Description
+            </div>
+            <div class="official-desc">
+                <div>
+                    The Page Lifecycle API, shipping in Chrome 68, provides lifecycle hooks so your pages can safely
+                    handle these browser interventions without affecting the user experience.
+                </div>
+                <div class="referencer">
+                    <span>-- By</span>
+                    <a href="https://developers.google.com/web/updates/2018/07/page-lifecycle-api" target="_blank">
+                        Google Developers
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="desc">
+            <div class="title">
+                Can I Use?
+            </div>
+            <div>
+                This is not a standardized feature for all browsers. For Chrome, it works only in Chrome 68+ (updated
+                after July 2018).
+            </div>
         </div>
     </section>
-    <ul class="menu relative">
-        <li class="timeline-continue"></li>
-        <li>
-            <div class="timeline"></div>
-            <div class="root"></div>
-            <div class="subtitle">
-                Best Web Features in 2018
+    <section class="navigator">
+        <a href="/http203/" class="flex-wrp item-center">
+            <div class="mr-s">←</div>
+            <div class="flex-wrp flex-column">
+                <div>Back</div>
+                <div class="desc">to HTTP203 List</div>
             </div>
-            <div class="timeline-item">
-                <div>Dec 17, 2018</div>
+        </a>
+        <a href="https://alan-zhufengxu.com" target="_blank" class="flex-wrp item-center">
+            <div class="flex-wrp flex-column">
+                <div>See More Projects</div>
+                <div class="desc">At Alan's Site</div>
             </div>
-            <ul class="sub-menu">
-                <li>
-                    <div class="leaf"></div>
-                    <a href="display-contents.html">
-                        display: contents;
-                    </a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a href="reporting-observer.html">ReportingObserver</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a href="scroll-snap.html">Scroll Snap</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a href="conic-gradient.html">Conic Gradient</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>CSS Typed OM</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>updateViaCache</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>Bitmaprenderer</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>Web Locks</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>CSS Paint API</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a href="toggle-attribute.html">toggleAttribute</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>OffscreenCanvas</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>Sensors</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>BigInt</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a href="page-lifecycle.html">Page Lifecycle API</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>import.meta</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>RegEx Named Capture Groups</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>Intl.RelativeTimeFormat</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>ResizeObserver</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>Audio Worklet</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>Fetch Cache Mode</a>
-                </li>
-                <li>
-                    <div class="leaf"></div>
-                    <a>Class Fields</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <div class="timeline"></div>
-            <div class="root"></div>
-            <div class="subtitle">
-                Old vs. New Javascript
-            </div>
-            <div class="timeline-item">
-                <div>Dec 04, 2018</div>
-            </div>
-            <ul class="sub-menu">
-                <li>
-                    <div class="leaf"></div>
-                    <a>
-                        Web Animation API
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+            <div class="ml-s">→</div>
+        </a>
+    </section>
 </main>
 <footer>
     <div>
@@ -337,6 +184,72 @@
         <div>©2019, Alan'site. All Rights Reserved</div>
     </div>
 </footer>
-<script src="script/index.js"></script>
+<script>
+	function getState() {
+		if (document.visibilityState === 'hidden') {
+			return 'hidden';
+		}
+		if (document.hasFocus()) {
+			return 'active';
+		}
+		return 'passive';
+	}
+
+	function updateState() {
+		document.querySelector("#page-prev-prev-state").innerHTML = document.querySelector("#page-prev-state").innerHTML;
+		document.querySelector("#page-prev-state").innerHTML = document.querySelector("#page-state").innerHTML;
+		document.querySelector("#page-state").innerHTML = getState();
+	}
+
+	const plate = ["#84ce94", "#6da6c2", "#e0b31b", "#c26b6f"];
+	let index = 0;
+
+	function updateEvent(text) {
+		let eventNode = document.querySelector("#page-event");
+		if (eventNode.childElementCount >= 15) {
+			eventNode.children[0].remove();
+		}
+		if (eventNode.childElementCount === 0) {
+			eventNode.innerHTML += `<b style="color: ${plate[index++ % 4]}">${text}</b>`;
+		} else {
+			eventNode.innerHTML += `<b class="ml-s" style="color: ${plate[index++ % 4]};display: flex;align-items: center;flex-shrink: 0;"> → ${text}</b>`;
+		}
+	}
+
+	window.addEventListener("focus", e => {
+		updateEvent("focus");
+		updateState();
+	});
+
+	window.addEventListener("blur", e => {
+		updateEvent("blur");
+		updateState();
+	});
+
+	window.addEventListener("freeze", e => {
+		updateEvent("freeze");
+		updateState();
+	});
+
+	window.addEventListener("resume", e => {
+		updateEvent("resume");
+		updateState();
+	});
+
+	window.addEventListener("visibilitychange", e => {
+		updateEvent("visibilitychange");
+		updateState();
+	});
+
+	window.addEventListener("pageshow", e => {
+		updateEvent("pageshow");
+		updateState();
+	});
+
+	window.addEventListener("pagehide", e => {
+		updateEvent("pagehide");
+		updateState();
+	});
+</script>
 </body>
 </html>
