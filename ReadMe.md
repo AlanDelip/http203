@@ -16,7 +16,7 @@ Inspired by & Thanks to:
     - [display: contents;](https://project.alan-zhufengxu.com/http203/display-contents.html)
     - [ReportingObserver](https://project.alan-zhufengxu.com/http203/reporting-observer.html)
     - [Scroll Snap](https://project.alan-zhufengxu.com/http203/scroll-snap.html)
-    - Conic Gradient
+    - [Conic Gradient](https://project.alan-zhufengxu.com/http203/conic-gradient.html)
     - CSS Typed OM
     - updateViaCache
     - Bitmap Renderer
@@ -29,7 +29,7 @@ Inspired by & Thanks to:
     - [Page Lifecycle API](https://project.alan-zhufengxu.com/http203/page-lifecycle.html)
     - import.meta
     - RegEx Named Capture Groups
-    - Intl.RelativeTimeFormat
+    - [Intl.RelativeTimeFormat](https://project.alan-zhufengxu.com/http203/relative-time-format.html)
     - ResizeObserver
     - Audio Worklet
     - Fetch Cache Mode
